@@ -1,0 +1,50 @@
+{
+    "name": "envant/likes",
+    "description": "Add likes to your Eloquent models",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Boris Lepikhin",
+            "email": "info@envant.me",
+            "homepage": "https://envant.me"
+        }
+    ],
+    "homepage": "https://github.com/envant/likes",
+    "keywords": ["Laravel", "Likes"],
+    "require": {
+        "envant/helpers": "dev-master",
+        "illuminate/database": "^5.8|^6.0",
+        "illuminate/support": "^5.8|^6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~7.0",
+        "mockery/mockery": "^1.1",
+        "orchestra/testbench": "~3.0",
+        "sempro/phpunit-pretty-print": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Envant\\Likes\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Envant\\Likes\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Envant\\Likes\\LikesServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
