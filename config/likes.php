@@ -2,7 +2,6 @@
 
 return [
     'table' => 'likes',
-    'moderation' => false,
     'model' => Envant\Likes\Like::class,
     'user_model' => null,
     'routes' => [
