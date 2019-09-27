@@ -7,6 +7,14 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 trait HasLikes
 {
+    protected static function bootHasLikes()
+    {
+        // delete attached likes
+        static::deleting(function ($model) {
+            $model->likes()->delete();
+        });
+    }
+
     /**
      * Return all likes for this model.
      *
