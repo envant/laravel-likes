@@ -13,7 +13,7 @@ $ composer require envant/likes
 You can publish the migration with:
 
 ``` bash
-$ php artisan vendor:publish --provider="Envant\Comments\LikesServiceProvider" --tag="migrations"
+$ php artisan vendor:publish --provider="Envant\Likes\LikesServiceProvider" --tag="migrations"
 ```
 
 After the migration has been published you can create the table by running the migrations:
@@ -25,7 +25,7 @@ $ php artisan migrate
 You can publish the config with:
 
 ``` bash
-$ php artisan vendor:publish --provider="Envant\Comments\LikesServiceProvider" --tag="config"
+$ php artisan vendor:publish --provider="Envant\Likes\LikesServiceProvider" --tag="config"
 ```
 
 ## Usage
