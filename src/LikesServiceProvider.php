@@ -2,7 +2,6 @@
 
 namespace Envant\Likes;
 
-use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 
 class LikesServiceProvider extends ServiceProvider

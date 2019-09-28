@@ -2,9 +2,7 @@
 
 namespace Envant\Likes;
 
-use Envant\Likes\Like;
 use Envant\Likes\Events\LikeCreated;
-use Envant\Likes\Events\LikeUpdated;
 use Envant\Likes\Events\LikeDeleted;
 use Illuminate\Support\Facades\Event;
 

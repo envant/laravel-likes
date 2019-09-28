@@ -10,7 +10,9 @@ trait HasLikes
     protected static function bootHasLikes()
     {
         // delete attached likes
+
         static::deleting(function ($model) {
+            /** @var \Envant\Likes\HasLikes $model */
             $model->likes()->delete();
         });
     }
@@ -28,8 +30,8 @@ trait HasLikes
     /**
      * Attach or detach a like from this model.
      *
-     * @param string $body
      * @return bool
+     * @throws \Exception
      */
     public function toggleLike(): bool
     {
@@ -41,6 +43,7 @@ trait HasLikes
      *
      * @param Model|null $user
      * @return bool
+     * @throws \Exception
      */
     public function toggleLikeAsUser(?Model $user): bool
     {
@@ -52,7 +55,7 @@ trait HasLikes
             return false;
         }
 
-        $like = $this->likes()->create([
+        $this->likes()->create([
             'user_id' => $user->getKey(),
         ]);
 
