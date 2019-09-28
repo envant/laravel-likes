@@ -9,18 +9,28 @@ use Envant\Likes\Requests\LikeRequest;
 
 class LikeController extends Controller
 {
+    /** @var \Illuminate\Contracts\Auth\Authenticatable|null  */
     private $user;
 
+    /**
+     * LikeController constructor.
+     */
     public function __construct()
     {
         $this->middleware(function ($request, $next) {
             $this->user = auth()->user();
+
             return $next($request);
         });
     }
 
+    /**
+     * @param \Envant\Likes\Requests\LikeRequest $request
+     * @throws \Exception
+     */
     public function __invoke(LikeRequest $request)
     {
+        /** @var \Envant\Likes\HasLikes $model */
         $model = ModelMapper::getEntity($request->model_type, $request->model_id);
         $model->toggleLike();
 

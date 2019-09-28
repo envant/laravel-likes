@@ -5,6 +5,7 @@ namespace Envant\Likes;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Exception;
 
 class Like extends Model
 {
@@ -28,7 +29,7 @@ class Like extends Model
      *
      * @return string
      */
-    public function getTable()
+    public function getTable(): string
     {
         return config('likes.table');
     }
@@ -41,8 +42,9 @@ class Like extends Model
 
     /**
      * Liker
-     * 
-     * @return BelongsTo|User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|\Illuminate\Database\Eloquent\Model
+     * @throws \Exception
      */
     public function user(): BelongsTo
     {
@@ -52,7 +54,7 @@ class Like extends Model
     /**
      * Related model
      *
-     * @return MorphTo
+     * @return \Illuminate\Database\Eloquent\Relations\MorphTo
      */
     public function model(): MorphTo
     {
@@ -71,7 +73,7 @@ class Like extends Model
      * @return string
      * @throws Exception
      */
-    public static function getAuthModelName()
+    public static function getAuthModelName(): string
     {
         if (config('likes.user_model')) {
             return config('likes.user_model');

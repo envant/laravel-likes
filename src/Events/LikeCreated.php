@@ -8,12 +8,14 @@ use Envant\Likes\Like;
 class LikeCreated
 {
     use SerializesModels;
+
+    /** @var \Envant\Likes\Like */
     public $like;
 
     /**
      * Create a new event instance.
      *
-     * @return void
+     * @param \Envant\Likes\Like $like
      */
     public function __construct(Like $like)
     {

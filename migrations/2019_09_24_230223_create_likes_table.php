@@ -9,17 +9,25 @@ class CreateLikesTable extends Migration
 {
     /**
      * Run the migrations.
+     * @throws \Exception
      */
     public function up()
     {
+        /** @var \Illuminate\Database\Eloquent\Model $userClass */
         $userClass = Like::getAuthModelName();
+
+        /** @var \Illuminate\Database\Eloquent\Model $userModel */
         $userModel = new $userClass();
 
         Schema::create(Like::getModel()->getTable(), function (Blueprint $table) use ($userModel) {
             $table->bigIncrements('id');
+
             $table->morphs('model');
-            $table->bigInteger('user_id')->unsigned();
-            $table->foreign('user_id')->references($userModel->getKeyName())->on($userModel->getTable())->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
+
+            $table->foreign('user_id')->references($userModel->getKeyName())->on($userModel->getTable())
+                ->onDelete('cascade');
+
             $table->timestamps();
         });
     }
