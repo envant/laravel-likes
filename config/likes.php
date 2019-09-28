@@ -8,7 +8,7 @@ return [
         'enabled' => true,
         'controller' => Envant\Likes\LikeController::class,
         'middleware' => [
-            'api', 'auth:api'
+            'api', 'auth:api',
         ],
         'prefix' => 'api',
     ],
