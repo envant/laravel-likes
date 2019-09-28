@@ -7,7 +7,7 @@ return [
     'routes' => [
         'enabled' => true,
         'controller' => Envant\Likes\LikeController::class,
-        'middleware' => 'api',
+        'middleware' => 'auth:api',
         'prefix' => 'api',
     ],
 ];
