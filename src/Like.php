@@ -2,10 +2,10 @@
 
 namespace Envant\Likes;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Exception;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Like extends Model
 {
@@ -23,7 +23,7 @@ class Like extends Model
     ];
 
     /**
-     * Override default model name
+     * Override default model name.
      *
      * @return string
      */
@@ -39,7 +39,7 @@ class Like extends Model
      */
 
     /**
-     * Liker
+     * Liker.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|\Illuminate\Database\Eloquent\Model
      * @throws \Exception
@@ -50,7 +50,7 @@ class Like extends Model
     }
 
     /**
-     * Related model
+     * Related model.
      *
      * @return \Illuminate\Database\Eloquent\Relations\MorphTo
      */
@@ -66,7 +66,7 @@ class Like extends Model
      */
 
     /**
-     * Get auth model
+     * Get auth model.
      *
      * @return string
      * @throws Exception
@@ -77,7 +77,7 @@ class Like extends Model
             return config('likes.user_model');
         }
 
-        if (!is_null(config('auth.providers.users.model'))) {
+        if (! is_null(config('auth.providers.users.model'))) {
             return config('auth.providers.users.model');
         }
 

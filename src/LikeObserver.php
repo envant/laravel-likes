@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Event;
 class LikeObserver
 {
     /**
-     * Handle the like "created" event
+     * Handle the like "created" event.
      *
      * @param Like $like
      * @return void
@@ -20,7 +20,7 @@ class LikeObserver
     }
 
     /**
-     * Handle the like "deleted" event
+     * Handle the like "deleted" event.
      *
      * @param Like $like
      * @return void

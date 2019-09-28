@@ -13,7 +13,7 @@ class LikesServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadMigrationsFrom(__DIR__ . '/../migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../migrations');
         $this->loadRoutes();
 
         // Publishing is only necessary when using the CLI.
@@ -25,14 +25,14 @@ class LikesServiceProvider extends ServiceProvider
     }
 
     /**
-     * Register routes
+     * Register routes.
      *
      * @return void
      */
     public function loadRoutes()
     {
         if (config('likes.routes.enabled') === true) {
-            $this->loadRoutesFrom(__DIR__ . '/routes.php');
+            $this->loadRoutesFrom(__DIR__.'/routes.php');
         }
     }
 
@@ -43,7 +43,7 @@ class LikesServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/likes.php', 'likes');
+        $this->mergeConfigFrom(__DIR__.'/../config/likes.php', 'likes');
     }
 
     /**
@@ -55,11 +55,11 @@ class LikesServiceProvider extends ServiceProvider
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__ . '/../config/likes.php' => config_path('likes.php'),
+            __DIR__.'/../config/likes.php' => config_path('likes.php'),
         ], 'config');
 
         $this->publishes([
-            __DIR__ . '/../migrations/' => database_path('migrations')
+            __DIR__.'/../migrations/' => database_path('migrations'),
         ], 'migrations');
     }
 }

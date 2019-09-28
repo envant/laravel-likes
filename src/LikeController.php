@@ -9,7 +9,7 @@ use Envant\Likes\Requests\LikeRequest;
 
 class LikeController extends Controller
 {
-    /** @var \Illuminate\Contracts\Auth\Authenticatable|null  */
+    /** @var \Illuminate\Contracts\Auth\Authenticatable|null */
     private $user;
 
     /**
