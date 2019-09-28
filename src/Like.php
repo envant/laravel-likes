@@ -9,8 +9,6 @@ use Exception;
 
 class Like extends Model
 {
-    use HasLikes;
-
     /** @var array */
     protected $fillable = [
         'user_id',
