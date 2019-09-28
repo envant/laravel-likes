@@ -2,8 +2,8 @@
 
 namespace Envant\Likes\Events;
 
-use Illuminate\Queue\SerializesModels;
 use Envant\Likes\Like;
+use Illuminate\Queue\SerializesModels;
 
 class LikeCreated
 {

@@ -2,9 +2,8 @@
 
 namespace Envant\Likes\Tests;
 
-use Envant\Likes\Like;
-use Envant\Likes\Tests\Models\User;
 use Envant\Likes\Tests\Models\Post;
+use Envant\Likes\Tests\Models\User;
 use Illuminate\Database\Schema\Blueprint;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 
@@ -32,13 +31,12 @@ abstract class TestCase extends BaseTestCase
      */
     protected function getEnvironmentSetUp($app)
     {
-        $app['path.base'] = __DIR__ . '/../src';
+        $app['path.base'] = __DIR__.'/../src';
 
         // set default config
-        $config = include __DIR__ . '/../config/likes.php';
-        foreach($config as $param => $value)
-        {
-            $app['config']->set('likes.' . $param, $value);
+        $config = include __DIR__.'/../config/likes.php';
+        foreach ($config as $param => $value) {
+            $app['config']->set('likes.'.$param, $value);
         }
 
         // set up the database
@@ -63,7 +61,7 @@ abstract class TestCase extends BaseTestCase
     {
         $this->loadMigrationsFrom([
             '--database' => 'sqlite',
-            '--realpath' => realpath(__DIR__ . '/../migrations'),
+            '--realpath' => realpath(__DIR__.'/../migrations'),
         ]);
         $this->loadLaravelMigrations(['--database' => 'sqlite']);
 

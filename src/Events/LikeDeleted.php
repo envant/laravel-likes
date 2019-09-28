@@ -2,14 +2,14 @@
 
 namespace Envant\Likes\Events;
 
-use Illuminate\Queue\SerializesModels;
 use Envant\Likes\Like;
+use Illuminate\Queue\SerializesModels;
 
 class LikeDeleted
 {
     use SerializesModels;
 
-    /** @var \Envant\Likes\Like  */
+    /** @var \Envant\Likes\Like */
     public $like;
 
     /**

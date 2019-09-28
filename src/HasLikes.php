@@ -12,7 +12,7 @@ trait HasLikes
         // delete attached likes
 
         static::deleting(function ($model) {
-            /** @var \Envant\Likes\HasLikes $model */
+            /* @var \Envant\Likes\HasLikes $model */
             $model->likes()->delete();
         });
     }
@@ -63,9 +63,9 @@ trait HasLikes
     }
 
     /**
-     * Check if user already liked the model
+     * Check if user already liked the model.
      *
-     * @return boolean
+     * @return bool
      */
     public function getIsLikedAttribute(): bool
     {
